@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "dev-master",
+        "php-activerecord/php-activerecord": "dev-master"
+    }
+}

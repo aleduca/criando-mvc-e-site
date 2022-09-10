@@ -1,0 +1,79 @@
+{% extends "Site/Layout.html" %}
+
+{% block titulo %} {{ titulo }} {% endblock %}
+
+{% block content %}
+
+<div class="row-fluid">
+
+    <div class="span12" id="divMain">
+
+        <h1>Bem Vindo</h1>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis euismod libero,
+       non tempus metus. Phasellus pulvinar tempus quam sed vestibulum.
+       Nam commodo eros at erat pretium tristique. Sed nisi mi, euismod sit
+       amet sem fringilla, blandit aliquet turpis. Praesent erat dolor, porta a
+       lacinia ut, convallis non erat. Duis vulputate odio euismod dapibus feugiat.
+       Aliquam sodales malesuada urna.
+     </p>
+
+     <p>
+       Praesent sed facilisis velit. Mauris lacinia et nisl ac scelerisque.
+      Nullam id iaculis dui. Phasellus imperdiet, orci elementum sollicitudin
+      tristique, ipsum lorem rhoncus tellus, at pulvinar neque purus hendrerit neque.
+      Cras scelerisque pharetra tempus. Morbi dapibus nec neque et mattis.
+      Phasellus ultricies accumsan laoreet. Maecenas feugiat lobortis diam,
+      non facilisis sem pretium sed. Proin dapibus est et consectetur pretium.
+    </p>
+    <br />
+    <br />
+
+    <div class="row-fluid">
+
+      {# aqui vao as especialidades #}
+      {% for especialidade in especialidades %}
+
+        <div class="span3">
+
+            <div class="box">
+
+              <i class="{{ especialidade.tb_especialidade_icon }}"></i>
+              <h4 class="title">{{ especialidade.tb_especialidade_nome }}</h4>
+              <p>{{ especialidade.tb_especialidade_descricao }}</p>
+
+            </div>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+
+    <div class="row-fluid">
+
+      {# aqui vao as noticias #}
+      {% for noticia in noticias %}
+
+        <div class="span3">
+
+          <h5 class="text-info"> {{ noticia.tb_noticia_titulo }} </h5>
+          <img src="{{ site_url() }}/public/images/6-md.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+          <p>{{ str_limit( noticia.tb_noticia_texto, 65, '...' ) | raw }}<br />
+          <a href="/noticia/{{ noticia.tb_noticia_slug }}">Leia Mais...</a></p>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="footerInnerSeparator"></div>
+
+{% endblock %}

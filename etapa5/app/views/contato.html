@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block titulo %} {{ titulo }} {% endblock %}
+
+{% block content %}
+    
+    <h3>Entre em contato conosco pelo formulário abaixo</h3>
+
+    {% if(mensagem is defined) %} {{ mensagem | raw }} {% endif %}
+
+    <form action="/contato/enviar" method="post">
+        
+        <label for="Nome">Nome:</label>
+        <input type="text" name="nome" class="form-control">
+
+        <input type="hidden" name="token" value="{{ token }}">
+
+        <label for="Email">E-mail:</label>
+        <input type="text" name="email" class="form-control">
+
+        <label for="Mensagem">Mensagem:</label>
+        <textarea name="mensagem" cols="100" rows="10"></textarea>
+
+        <label></label>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+
+{% endblock %}

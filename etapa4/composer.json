@@ -1,0 +1,28 @@
+{
+    "name" : "curso de mvc",
+    "type" : "mvc",
+    "require" : {
+        "php-activerecord/php-activerecord": "dev-master",
+        "illuminate/support": "5.0.4",
+        "php" : ">=5.4.0",
+        "illuminate/contracts": "5.0.*@dev",
+        "patchwork/utf8": "1.2.*@dev",
+        "twig/twig": "1.16.*@dev",
+        "intervention/image": "dev-master",
+        "phpmailer/phpmailer": "dev-master",
+        "symfony/var-dumper": "3.0.*@dev",
+        "pagerfanta/pagerfanta": "1.0.*@dev"
+    },
+    "autoload":{
+        "psr-4":{
+            "Acme\\Classes\\": "Acme/Classes",
+            "App\\Models\\" : "App/Models",
+            "App\\Controllers\\" : "App/Controllers",
+            "App\\Core\\" : "App/Core",
+            "Acme\\Traits\\" : "Acme/Traits"
+        }
+    },
+    "files":[
+        "vendor/illuminate/support/helpers.php"
+    ]
+}

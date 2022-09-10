@@ -1,0 +1,31 @@
+{% extends "Site/Layout.html" %}
+
+{% block titulo %} {{ titulo }} {% endblock %}
+
+{% block content %}
+    
+   {% if resultadoBusca is empty %}
+    
+        <h3>Nenhuma notícia encontrada com a palavra "{{ palavraBuscada }}"</h3>
+
+   {% else %}
+    
+      <h2>Resultado da Busca "{{ palavraBuscada }}" </h2>
+
+       {% for busca in resultadoBusca %}
+
+            <h2> {{ busca.tb_noticia_titulo }} </h2>
+            {{ str_limit( busca.tb_noticia_texto , 200 , '...') | raw }} <br>
+            <a href="/noticia/{{ busca.tb_noticia_slug }}">Leia mais...</a>     
+
+
+       {% endfor %} 
+
+       <div class="pager">
+         {{ links | raw }}
+       </div>
+
+   {% endif %} 
+  
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "Site/Layout.html" %}
+
+{% block titulo %} {{ titulo }} {% endblock %}
+
+{% block content %}
+
+    <h2>{{ noticia.tb_noticia_titulo }}</h2>
+        
+        {{ noticia.tb_noticia_texto | raw }}    
+  
+
+{% endblock %}

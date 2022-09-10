@@ -1,0 +1,38 @@
+{
+    "name": "curso mvc",
+    "type": "curso",
+    "require": {
+        "php-activerecord/php-activerecord": "dev-master",
+        "twig/twig": "1.15.*@dev",
+        "intervention/image": "dev-master",
+        "php": ">=5.4.0",
+        "illuminate/contracts": "4.3.*@dev",
+        "illuminate/support": "4.3.*@dev",
+        "symfony/security-core": "2.6.*dev",
+        "illuminate/encryption": "4.3.*@dev",
+        "ircmaxell/password-compat": "~1.0",
+        "phpmailer/phpmailer": "5.2.8"
+    },
+
+     "require-dev": {
+        "jeremeamia/superclosure": "~1.0",
+        "patchwork/utf8": "~1.1"
+    },
+
+    "autoload" : {
+        "psr-4": {
+            "acme\\classes\\" : "acme/classes",
+            "acme\\interfaces\\" : "acme/interfaces",
+            "app\\models\\" : "app/models",
+            "app\\classes\\" : "app/classes",
+            "app\\interfaces\\" : "app/interfaces",
+            "app\\traits\\" : "app/traits",
+            "app\\controllers\\" : "app/controllers",
+            "app\\core\\" : "app/core",
+            "acme\\traits\\" : "acme/traits"
+        },
+        "files": [
+            "vendor/illuminate/support/helpers.php"
+        ]
+    }
+}

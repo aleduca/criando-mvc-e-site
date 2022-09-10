@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block titulo  %} {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+        <link href="{{ site_url() }}/public/admin/css/login.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container">
+        <h2>Login</h2>
+        <p>Atenção, essa é uma área restrita, para poder acessar você precisa ter um login e uma senha, se não tiver provavelmente é porque não pode ter acesso a esse conteúdo.<br /> Caso você precise ter acesso mas não tem, entre em contato através do email do administrador e peça para liberar seu acesso.</p>
+
+        <p>{% if(mensagem is defined) %} {{ mensagem | raw }} {% endif %}</p>
+            
+        <form action="/admin/auth" method="POST">
+
+        <label for="Email">E-mail:</label>
+        <input type="text" name="email" class="form-control">
+
+        <label for="Senha">Senha:</label>
+        <input type="password" name="senha" class="form-control">
+
+        <label></label>
+        <input type="submit" value="Logar no sistema" class="btn btn-primary btn-lg btn-block">
+
+        </form>
+    </div>
+    </body>
+</html>

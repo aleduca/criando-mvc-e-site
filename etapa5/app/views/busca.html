@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block titulo %} {{ titulo }} {% endblock %}
+
+{% block content %}
+
+    <h2>Encontramos {{ resultadoBusca|length }} registros em sua busca por '<i>{{ palavraBuscada }}</i>'</h2>
+
+    {% if resultadoBusca is empty  %}
+        Nenhum registro encontrado para sua busca
+    {% else %}
+    
+        {% for busca in resultadoBusca %}
+            <h2>{{ busca.tb_especialidade_nome }}</h2>
+            <p>{{ busca.tb_especialidade_descricao }}</p>
+            <hr />
+        {% endfor %}
+
+    {% endif %}
+
+{% endblock %}
